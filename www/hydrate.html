@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/chart.css">
+    <link rel="stylesheet" type="text/css" href="css/hydrate.css">
+
+    <title>iDrink</title>
+</head>
+<body>
+<div class="app medium">
+    <div class='header wrap'>
+        <div class='profile'  data-toggle="modal" data-target="#getWeight"><div class="glyphicon glyphicon-user " aria-hidden="true"><p></p></div></div>
+        <div class='date large bold'></div>
+        <div class='settings'><span class="glyphicon glyphicon-share" aria-hidden="true" ></span></div>
+        <div id="getWeight" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Edit profile</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <div class='wrap toggle'>
+                                <span class='left bold large selected' data-unit='ml' data-attr='Enter your weight in kgs'>Milliliters</span>
+                                <span class='right bold large' data-unit='oz' data-attr='Enter your weight in lbs'>Ounces</span>
+                            </div>
+                            <div>
+                                <span class='weightText medium'>Enter your weight in kgs</span>
+                                <span><input class="form-control" type="number" placeholder="Weight" id="weight" value="" required></span>
+                            </div>
+                            <div class='error medium'>Please enter a valid weight</div>
+                            <div class='space'></div>
+                            <div type="submit" class="btn btn-info large bold" id="submit">Save</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='content main hydrate active '>
+        <div class='large'><span>Your daily target is </span><span class='requirement'></span></div>
+        <div class='space'></div>
+        <div class='chart'>
+            <div class="circle big blue">
+                <span class='percentage'>0</span>
+                <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                </div>
+            </div>
+        </div>
+        <div class='space'></div>
+        <div id='add' class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+        </div>
+        <div id='del' class="btn btn-info btn-sm" data-toggle="modal" data-target="#delete">
+            <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Choose quantity</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class='addWater' ><span class='img-responsive'><img src="img/cup.png"></span><div class='quantity'></div></div>
+                        <div class='addWater' ><span class='img-responsive'><img src="img/glass.png"></span><div class='quantity'></div></div>
+                        <div class='addWater' ><span class='img-responsive'><img src="img/sipper.png"></span><div class='quantity'></div></div>
+                        <div class='addWater' ><span class='img-responsive'><img src="img/bottle.png"></span><div class='quantity'></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="delete" role="dialog">
+            <div class="modal-dialog modal-sm">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Choose quantity</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class='addWater' ><span class='img-responsive'><img src="img/cup.png"></span><div class='quantity'></div></div>
+                        <div class='addWater' ><span class='img-responsive'><img src="img/glass.png"></span><div class='quantity'></div></div>
+                        <div class='addWater' ><span class='img-responsive'><img src="img/sipper.png"></span><div class='quantity'></div></div>
+                        <div class='addWater' ><span class='img-responsive'><img src="img/bottle.png"></span><div class='quantity'></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class='content main history '>
+        <div class='space'></div>
+        <ul class='navigate navbtn stats wrap'>
+            <li class='weekly selected'>7 day</li>
+            <li class='month'>30 day</li>
+        </ul>
+        <div class='space'></div>
+        <div class='stats content weekly active'>
+            <div class="bar-chart">
+                <ul class="container weekly">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class='line'>
+                    <div class='hr'></div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class='stats content month'>
+            <div class="bar-chart">
+                <ul class="container monthly">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class='line'>
+                    <div class='hr'></div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class='content main notification'>
+        <div class='space'></div>
+        <div class='notification'>
+           <div class='wrap notificationWrapper'>
+               <div class='left medium'>
+                <div><label><input type="checkbox" data-time='01:00' name="checkbox" value="value"> 1 AM</label></div>
+                <div><label><input type="checkbox" data-time='02:00' name="checkbox" value="value"> 2 AM</label></div>
+                <div><label><input type="checkbox" data-time='03:00' name="checkbox" value="value"> 3 AM</label></div>
+                <div><label><input type="checkbox" data-time='04:00' name="checkbox" value="value"> 4 AM</label></div>
+                <div><label><input type="checkbox" data-time='05:00' name="checkbox" value="value"> 5 AM</label></div>
+                <div><label><input type="checkbox" data-time='06:00' name="checkbox" value="value"> 6 AM</label></div>
+               </div>
+
+                <div class='left medium'>
+                <div><label><input type="checkbox" data-time='13:00' name="checkbox" value="value"> 1 PM</label></div>
+                <div><label><input type="checkbox" data-time='14:00' name="checkbox" value="value"> 2 PM</label></div>
+                <div><label><input type="checkbox" data-time='15:00' name="checkbox" value="value"> 3 PM</label></div>
+                <div><label><input type="checkbox" data-time='16:00' name="checkbox" value="value"> 4 PM</label></div>
+                <div><label><input type="checkbox" data-time='17:00' name="checkbox" value="value"> 5 PM</label></div>
+                <div><label><input type="checkbox" data-time='18:00' name="checkbox" value="value"> 6 PM</label></div>
+                </div>
+               <div class='right medium'>
+                   <div><label><input type="checkbox" data-time='07:00' name="checkbox" value="value"> 7 AM</label></div>
+                   <div><label><input type="checkbox" data-time='08:00' name="checkbox" value="value"> 8 AM</label></div>
+                   <div><label><input type="checkbox" data-time='09:00' name="checkbox" value="value"> 9 AM</label></div>
+                   <div><label><input type="checkbox" data-time='10:00' name="checkbox" value="value"> 10 AM</label></div>
+                   <div><label><input type="checkbox" data-time='11:00' name="checkbox" value="value"> 11 AM</label></div>
+                   <div><label><input type="checkbox" data-time='24:00' name="checkbox" value="value"> 12 AM</label></div>
+               </div>
+            <div class='right medium'>
+                <div><label><input type="checkbox" data-time='19:00' name="checkbox" value="value"> 7 PM</label></div>
+                <div><label><input type="checkbox" data-time='20:00' name="checkbox" value="value"> 8 PM</label></div>
+                <div><label><input type="checkbox" data-time='21:00' name="checkbox" value="value"> 9 PM</label></div>
+                <div><label><input type="checkbox" data-time='22:00' name="checkbox" value="value"> 10 PM</label></div>
+                <div><label><input type="checkbox" data-time='23:00' name="checkbox" value="value"> 11 PM</label></div>
+                <div><label><input type="checkbox" data-time='12:00' name="checkbox" value="value"> 12 PM</label></div>
+            </div>
+               <div class='space'></div>
+               <button id='save' class='btn btn-info large bold'>Save</button>
+           </div>
+
+
+        </div>
+    </div>
+
+    <div class='advertaise'></div>
+    <div class='footer'>
+        <ul class='navigate wrap'>
+            <li class='hydrate selected'><span class='large bold'>Hydrate</span></li>
+            <li class='history'><span class='large bold'>History</span></li>
+            <li class='notification'><span class='large bold'>Notify</span></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/model.js"></script>
+<script type="text/javascript" src="js/service.js"></script>
+<script type="text/javascript" src="js/template.js"></script>
+<script type="text/javascript" src="js/profile.js"></script>
+<script type="text/javascript" src="js/monthlyData.js"></script>
+<script type="text/javascript" src="js/hydrate.js"></script>
+<script type="text/javascript" src="js/notification.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/hydrate.css">
+    <link rel="stylesheet" type="text/css" href="css/chart.css">
+    <title>iDrink</title>
+</head>
+<body>
+<div class="app container">
+    <br>
+    <h4>iDrink</h4>
+    <br>
+    <div class="group">
+        <form class=''>
+        <div class='wrap toggle'>
+            <span class='left selected bold large' data-unit='ml' data-attr='Enter your weight in kgs'>Milliliters</span>
+            <span class='right large bold' data-unit='oz' data-attr='Enter your weight in lbs'>Ounces</span>
+        </div>
+        <br>
+        <div>
+            <span class='weightText medium'>Enter your weight in kgs</span>
+            <span><input class="form-control" type="number" placeholder="Weight" id="weight" value="" required></span>
+        </div>
+        <div class='error'>Please enter a valid weight</div>
+        <br>
+         <button type="submit" class="btn btn-info large bold" id="submit">Next</button>
+        </form>
+    </div>
+    <br>
+    <div class='small'><p>Disclaimer</p>Hydration level may vary with climate, body type, exercise, age and gender.For more accurate numbers, please contact health care professional or nutritionist.</div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="js/model.js"></script>
+<script type="text/javascript" src="js/service.js"></script>
+<script type="text/javascript" src="js/template.js"></script>
+<script type="text/javascript" src="js/profile.js"></script>
+<script type="text/javascript" src="js/loader.js"></script>
+</body>
+</html>
