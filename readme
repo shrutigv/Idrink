@@ -1,9 +1,0 @@
-1) cordova build --release android
-
-2)Generate keystore
-Run cmd as admin in %java_home%\bin path = keytool -genkey -v -keystore D:\Project\app\platforms\android\andriod.keystore.jks -alias shruti -keyalg RSA -keysize 2048 -validity 10000
-
-3)To generate apk
-cordova run android --release -- --keystore=D:\Project\app\platforms\android\andriod.keystore.jks --storePassword=Vpb88Sudhi --alias=key0 --password=Vpb88Sudhi
-
-keystore path/apk = D:\Project\app\platforms\android\build\outputs\apk\android-release.apk
